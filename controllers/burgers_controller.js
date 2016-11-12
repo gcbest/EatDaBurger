@@ -1,17 +1,20 @@
 var express = require('express');
-var burger = require('../models/burgers');
+var burger = require('../models/burger.js');
 
-var app = express();
+var router = express.Router();
 
-var router = {
-	homepage : app.get('/', function(req, res) {
-		res.render("hey");
-	}),
+var burger_list = {
 
-	nextpage : app.get('/next', function(req, res) {
-		res.render("yo");
-	})
-}
+};
+
+router.get('/', function(req, res) {
+	console.log(burger.all());
+	// res.render("index", {burr: burger.all});
+})
+
+router.post('/create', function(req, res) {
+	console.log("hey");
+})
 
 
 module.exports = router;

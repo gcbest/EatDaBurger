@@ -1,7 +1,7 @@
 var connection = require('./connection.js');
 
 
-connection
+
 var ORM = {
 	selectAll: function() {
 		connection.query("SELECT * FROM burgers", function(err, data) {
@@ -14,7 +14,7 @@ var ORM = {
 	},
 
 	insertOne: function() {
-		connection.query("INSERT INTO burgers values= ?", ,function(err, data) {
+		connection.query("INSERT INTO burgers values= ?", ["hey"],function(err, data) {
 			if (err) {
 				throw err;
 			}
@@ -23,8 +23,8 @@ var ORM = {
 		});
 	},
 
-	updateOne: function() {
-		connection.query("UPDATE burgers SET ? values= ?", ,function(err, data) {
+	updateOne: function(column, value) {
+		connection.query("UPDATE burgers SET ? values= ?", [column, value] ,function(err, data) {
 			if (err) {
 				throw err;
 			}

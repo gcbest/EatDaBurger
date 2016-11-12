@@ -1,11 +1,10 @@
 var mysql      = require('mysql');
-var exports = module.exports = {};
 
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
-  database : 'event_saver_db'
+  database : 'burgers_db'
 });
 
 connection.connect(function(err) {
@@ -18,4 +17,4 @@ connection.connect(function(err) {
 
 })
 
-exports = connection;
+module.exports = connection;
